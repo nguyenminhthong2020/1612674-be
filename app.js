@@ -40,7 +40,7 @@ app.use(limiter);
 
 // Index - Home
 app.get('/', (req, res) => {              
-    res.json('Welcome to myCoin Nguyễn Minh Thông, 1612674');
+    res.json('Welcome to myCoin - Nguyễn Minh Thông, 1612674');
 });
 
 
