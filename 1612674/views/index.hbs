@@ -1,0 +1,130 @@
+<div style="display: inline-flex;">
+    <div style="margin-top:20px; margin-left: 40px; max-width:900px; float:left">
+        <p style="font-weight: bold; color: #74115a">THÔNG TIN VÍ TCHAIN</p>
+        <div style="margin-left: 20px">
+            <p style="max-width: 50%; overflow-wrap: break-word; max-width: 700px "> Address : <span id="address"
+                    style="font-weight: bold;">{{address}}</span></p>
+            <p style="max-width: 50%; overflow-wrap: break-word; max-width: 700px ">Private key: <span id="privatekey"
+                    style="font-weight: bold;">{{privateKey}}</span></p>
+            <p>Số dư: <span id ="total">{{balance}}</span> TCoin</p>
+        </div>
+    </div>
+    <div style="margin-top: 20px; margin-left: 178px; float: left; ">
+        <p style="font-weight: bold; color: #74115a">CHUYỂN KHOẢN TCHAIN 
+            {{#if error}}
+            <span style="color: red">{{msg}}</span>
+            {{/if}}
+        </p>
+        <form action="/create-transaction" method="post">
+            <label>
+                Địa chỉ nhận
+            </label>
+            <input name="to" placeholder="Địa chỉ nhận tiền" style="padding-left: 12px;" autocomplete="off"\>
+            <br />
+            <label style="margin-top: 20px">Số tiền (TCoin) </label>
+            <input name="amount" placeholder="Số tiền cần chuyển" style="padding-left: 12px;" autocomplete="off" />
+            <br />
+            <button class="btn btn-success" style="padding: 5px 10px; margin-left: 77px; margin-top: 20px;">Chuyển
+                khoản</button>
+        </form>
+    </div>
+</div>
+<div style=" margin-top: 40px; margin-left: 40px;">
+    <p style="font-weight: bold; color: #74115a; display: inline">LỊCH SỬ GIAO DỊCH CÁ NHÂN</p>
+     <table class="table" style="font-size: 13px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" >Tài khoản gửi</th>
+                <th scope="col">Tài khoản nhận</th>
+                <th scope="col">Số tiền</th>
+                <th scope="col">Timestamp </th>
+            </tr>
+        </thead>
+        <tbody id ="transaction" >
+        {{#if transactions}}
+            {{#each transactions}}
+            <tr>
+                {{#if fromAddress}}
+                    <td style="overflow-wrap: break-word;max-width: 315px; text-align:left ">
+                        {{fromAddress}}
+                    </td>
+                {{else}}
+                     <td style="overflow-wrap: break-word;max-width: 315px; text-align:left ">
+                        Hệ thống thưởng tchain
+                    </td>
+                {{/if}}
+                <td style="overflow-wrap: break-word; max-width: 315px; text-align:left">
+                    {{toAddress}}
+                </td>
+                <td>{{amount}}</td>
+                <td> {{timestamp}}</td>
+            </tr>
+            {{/each}}
+    {{/if}}
+      </tbody>
+    </table>
+    
+</div>
+<div style=" margin-top: 40px; margin-left: 40px; ">
+    <p style="font-weight: bold; color: #74115a; display: inline"> GIAO DỊCH MỚI NHẤT TOÀN HỆ THỐNG REAL TIME</p>
+     <table class="table" style="font-size: 13px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" >Tài khoản gửi</th>
+                <th scope="col">Tài khoản nhận</th>
+                <th scope="col">Số tiền</th>
+                <th scope="col">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody id ="list-transaction" >
+        {{#if lastestTransactions}}
+            {{#each lastestTransactions}}
+            <tr>
+                {{#if fromAddress}}
+                    <td style="overflow-wrap: break-word;max-width: 315px; text-align:left ">
+                        {{fromAddress}}
+                    </td>
+                {{else}}
+                     <td style="overflow-wrap: break-word;max-width: 315px; text-align:left ">
+                        Hệ thống thưởng tchain
+                    </td>
+                {{/if}}
+                <td style="overflow-wrap: break-word; max-width: 315px; text-align:left">
+                    {{toAddress}}
+                </td>
+                <td>{{amount}}</td>
+                <td> {{timestamp}}</td>
+            </tr>
+            {{/each}}
+    {{/if}}
+      </tbody>
+    </table>
+    
+</div>
+<div style=" margin-top: 40px; margin-left: 40px">
+    <p style="font-weight: bold; color: #74115a; display: inline">DANH SÁCH LASTEST BLOCK REAL TIME</p>
+     <table class="table" style="font-size: 13px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" >preHash</th>
+                <th scope="col">Hash</th>
+                <th scope="col">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody id ="list-block" >
+        {{#if lastestBlocks}}
+            {{#each lastestBlocks}}
+            <tr>
+                <td style="overflow-wrap: break-word;max-width: 315px; text-align:left ">
+                    {{previousHash}}
+                </td>
+                <td style="overflow-wrap: break-word; max-width: 315px; text-align:left">
+                    {{hash}}
+                </td>
+                <td> {{timestamp}}</td>
+            </tr>
+            {{/each}}
+    {{/if}}
+      </tbody>
+    </table>
+</div>

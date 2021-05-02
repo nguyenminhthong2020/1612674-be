@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <p class="title"><a href="/" style="text-decoration: none">HỆ THỐNG GIAO DỊCH TCHAIN</a></p>
+    <div class="access-block">
+		{{#if isLogin}}
+			<button class="btn btn-warning signup"><a href="/logout" style="text-decoration: none; color:white !important">Đăng Xuất</a></button>
+		{{else}}
+			<button class="btn btn-success register"><a href="/create-wallet" style="text-decoration: none; color:white !important">Tạo Wallet</a></button>
+			<button class="btn btn-warning signup"><a href="/login" style="text-decoration: none; color:white !important">Đăng Nhập</a></button>
+		{{/if}}
+    </div>
+  </div>
+  {{#if address}}
+  <input id ="address" value="{{address}}" hidden />
+  {{/if}}
+  {{{body}}}
+  <script src="/js/index.js">
+  </script>
+</body>
+
+</html>

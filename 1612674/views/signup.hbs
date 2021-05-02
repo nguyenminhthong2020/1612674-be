@@ -1,0 +1,21 @@
+<div class="register-block" id = "register">
+    <p style="font-weight: bold; color: #74115a">TẠO VÍ TCHAIN MỚI</p>
+    <p>Hệ thống sẽ không ghi nhận lại thông tin của bạn, do đó việc quản lý tài khoản thuộc về phía bạn. Chúng tôi sẽ không chịu trách nhiệm trong
+        trường hợp mất cắp tài khoản của bạn.<br/> 
+        Nếu bạn đồng ý vui lòng nhấn nút bên dưới để tạo ví. </p>
+    <form id="from-register" action="/create-wallet" method="post">
+        {{!-- <label style="margin-right: 20px">Mật khẩu truy cập:</label>
+        <br />
+        <input name="password" style="width: 425px; height: 35px" /> --}}
+        <input class="socketId" name='socketId' hidden />
+        <br />
+        <button type="submit" class="btn btn-success " style="margin-right: 206px; margin-top: 16px; padding: 4px 11px;"> Tạo ví mới</button>
+    </form>
+</div>
+<div id ="success" style="margin-top: 40px; ; margin-left:40px; display:none">
+    <span id ="noti-title"  style="font-size: 20px; font-weight: bold; color: green; margin-botton: 20px">THÀNH CÔNG ! </span>
+    <br/>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Chúng tôi vừa gửi bạn file chứa thông tin tài khoản. Vui lòng không cung cấp những thông tin này cho bất kỳ ai. 
+    <br/>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Nếu mất private key bạn sẽ tài khoản bạn sẽ bị mất và không được cấp lại vui lòng giữ thông tin đăng nhập ở nơi an toàn.
+</div>

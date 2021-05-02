@@ -1,0 +1,15 @@
+
+<div class="register-block" id ="login">
+    <p style="font-weight: bold; color: #74115a">ĐĂNG NHẬP VÍ TCHAIN </p>
+    <form id="from-register" action="/login" method="post">
+        <label style="margin-right: 20px">Khóa truy cập (private key):</label> 
+        <br />
+        <input name="privateKey" style="width: 425px; height: 35px" autocomplete="off" /> 
+        {{#if error}}
+            <span id ="notice" style="margin-left: 20px; color:red; font-weight:bold"> Private key không hợp lệ vui lòng kiểm tra lại !</span>
+        {{/if}}
+        <input class="socketId" name='socketId' hidden />
+        <br />
+        <button type="submit" class="btn btn-success " style="margin-right: 206px; margin-top: 16px; padding: 4px 11px;">Đăng nhập</button>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+body{
+	background-color: #d9f1f0 !important;
+	  position: relative;
+	  min-height: 753px;
+}
+.header{
+  height: 57px;
+  background-color: rgb(69, 236, 181);
+  font-size: 13px;
+}
+.footer{
+	height: 110px;
+	background-color: rgb(69, 236, 181);
+	font-size: 14px;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	font-weight:bold;
+}
+.footer > p{
+	margin: 10px;
+	color: #8f652e;
+}
+.title{
+	font-weight: bold;
+	font-size: 20px; 
+	padding: 17px 10px; 
+	color:#e7470c;
+	display: inline-block;
+}
+.register-block{
+	margin-top: 40px;
+	margin-left: 40px;
+}
+.access-block{
+	float:right;
+	margin-right: 50px;
+}
+.access-block > button {
+	margin-top: 10px !important;
+	margin-left: 20px;
+}
