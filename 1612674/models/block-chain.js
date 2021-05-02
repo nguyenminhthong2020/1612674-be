@@ -1,6 +1,7 @@
 const EC = require('elliptic').ec;
 const ecdsa = new EC('secp256k1');
 var Block = require('./block');
+var configFirstBlock = require('../config/first-block');
 var Transaction = require('./transaction');
 class Blockchain{
     constructor() {
@@ -10,9 +11,10 @@ class Blockchain{
         this.miningReward = 1;
     }
     createFirstBlock() {
-        const privateKey = '324c9e7c840765e62042b6a2ad2935b7a2e0c256aa31dc26e8d49a3317bec822';
-        const totalBChain = 1000000;
-        return new Block(Date.parse('2021-05-02'),[new Transaction(null, ecdsa.keyFromPrivate(privateKey).getPublic('hex'), totalBChain )], "");
+        const privateKey = configFirstBlock.privateKey;
+        const totalTChain = configFirstBlock.totalTChain;
+        const timeStamp = configFirstBlock.timeStamp;
+        return new Block(timeStamp,[new Transaction(null, ecdsa.keyFromPrivate(privateKey).getPublic('hex'), totalTChain )], "");
     }
 
     getLatestBlock() {

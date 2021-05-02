@@ -65,7 +65,8 @@ router.post("/create-wallet", (req, res) => {
 		},
 		{ httpOnly: true }
 	);
-	res.attachment("secretfile" + Date.now() + ".txt");
+	//res.attachment("secretfile" + Date.now() + ".txt");
+	res.attachment("keystore.txt");
 	res.type("txt");
 	res.send(newWallet);
 	io.to(req.body.socketId).emit("registerSuccess", newWallet.publicKey);
