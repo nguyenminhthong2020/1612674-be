@@ -36,7 +36,16 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// error 
+app.use(function (err, req, res, next) {        // default error-handler
+  if (typeof err.status === 'undefined' || err.status === 500) {
+      console.error(err.stack);
+      res.status(500).send('View error log on console.');
+    } else {
+      res.status(err.status).send(err);
+    }
+})
+
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -46,6 +55,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
 global.io = io;
 global.blockChain = blockChain;
 module.exports = {
