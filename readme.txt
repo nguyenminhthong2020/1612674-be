@@ -5,6 +5,8 @@ https://github.com/nguyenminhthong2020/1612674-be
 + link deploy (heroku) :
 https://blockchain-btcn.herokuapp.com/login 
 + link youtube : 
+https://www.youtube.com/watch?v=6yMe07KjvL8
+
 
 b) Hướng dẫn chạy: 
 + Nếu chạy trên localhost :
