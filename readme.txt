@@ -1,5 +1,10 @@
 1612674, Nguyễn Minh Thông
 a) Video demo & hướng dẫn sử dụng:
++ link github : 
+https://github.com/nguyenminhthong2020/1612674-be 
++ link deploy (heroku) :
+https://blockchain-btcn.herokuapp.com/login 
++ link youtube : 
 
 b) Hướng dẫn chạy: 
 + Nếu chạy trên localhost :
